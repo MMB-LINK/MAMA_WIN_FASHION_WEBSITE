@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance & Style</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="text-2xl font-bold tracking-wide text-gray-900">
+                Elegance & Style
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors duration-200" id="filter-all">Home</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors duration-200" id="filter-bags">Bags</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors duration-200" id="filter-shoes">Shoes</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors duration-200" id="filter-palms">Palms</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-200" id="filter-all-mobile">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-200" id="filter-bags-mobile">Bags</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-200" id="filter-shoes-mobile">Shoes</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-200" id="filter-palms-mobile">Palms</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-200">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <div class="relative w-full h-96 sm:h-[400px] md:h-[500px] lg:h-[600px] bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/E5E7EB/4B5563?text=New+Collection.+Arriving+Soon.')">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+                <div class="text-center text-white">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg">
+                        Unveil Your Style
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl font-light mb-8 drop-shadow-md">
+                        Discover timeless elegance in every piece.
+                    </p>
+                    <a href="#" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Products Section -->
+        <section class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Products</h2>
+            <!-- Product Filter Buttons -->
+            <div class="flex justify-center flex-wrap gap-4 mb-12">
+                <button class="px-6 py-2 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 transition-colors duration-200" data-filter="all">All</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 transition-colors duration-200" data-filter="bag">Bags</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 transition-colors duration-200" data-filter="shoe">Shoes</button>
+                <button class="px-6 py-2 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 transition-colors duration-200" data-filter="palm">Palms</button>
+            </div>
+            <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Products will be dynamically generated here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-xl font-bold mb-4">Elegance & Style</h4>
+            <p class="mb-4">Crafted with passion, designed for you.</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-white transition-colors duration-200">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.417 2.865 8.164 6.83 9.5a1.53 1.53 0 00.913-.805v-2.73a1.54 1.54 0 01-.19-.533c-.664-.17-1.485-.41-1.895-.886a1.996 1.996 0 00-.73-1.424c-.453-.393-.326-.464-.092-.472a1.59 1.59 0 011.2.628c.34 1.144 1.583.834 2.146.634a1.643 1.643 0 01.493-1.042c-2.775-.318-5.694-1.385-5.694-6.294 0-1.39.5-2.527 1.32-3.418a4.67 4.67 0 01.126-1.52c.42-.14 1.344-.19 2.766.52a9.42 9.42 0 015.65 0c1.422-.71 2.346-.66 2.766-.52a4.67 4.67 0 01.126 1.52c.82.89 1.32 2.028 1.32 3.418 0 4.91-2.92 5.975-5.695 6.294a1.69 1.69 0 01.493 1.043v2.73a1.53 1.53 0 00.912.805C21.135 20.181 24 16.434 24 12.017 24 6.484 19.522 2 12 2z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors duration-200">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22.02 0H1.98C.888 0 0 .888 0 1.98v20.04C0 23.112.888 24 1.98 24h20.04c1.092 0 1.98-.888 1.98-1.98V1.98C24 .888 23.112 0 22.02 0zM17.152 7.151c0-.181-.005-.361-.016-.541-.01-.18-.03-.359-.053-.537-.024-.179-.055-.357-.095-.536-.04-.179-.088-.357-.146-.534-.058-.178-.124-.356-.201-.533-.077-.177-.165-.353-.266-.529-.101-.176-.214-.35-.339-.522-.125-.173-.263-.344-.415-.512-.152-.168-.319-.333-.499-.496-.18-.163-.374-.323-.58-.479-.207-.156-.427-.308-.663-.453-.236-.145-.487-.28-.75-.402-.263-.122-.54-.233-.83-.332-.29-.099-.594-.186-.91-.262-.316-.076-.644-.139-.983-.19-.34-.051-.689-.089-1.049-.114-1.07-.074-2.146-.074-3.216 0-.36.025-.71.063-1.05.114-.34.051-.67.114-.986.19-.315.076-.619.163-.909.262-.29.099-.553.21-.789.332-.236.145-.456.297-.663.453-.207.156-.4.316-.58.479-.18.163-.347.328-.499.496-.152.168-.29.34-.415.512-.125.173-.238.346-.339.522-.101.176-.189.352-.266.529-.077.177-.143.355-.201.533-.058.177-.106.355-.146.534-.04.179-.071.357-.095.536-.023.178-.043.357-.053.537-.011.18-.016.36-.016.541 0 1.07.073 2.146.22 3.216.025.18.063.36.114.54.051.18.114.36.19.54.076.18.163.359.262.538.099.179.21.356.332.532.122.176.26.349.402.52-.145.236-.28.487-.402.75-.122.263-.233.54-.332.83-.099.29-.186.594-.262.91-.076.316-.139.644-.19.983-.051-.34-.089-.689-.114-1.049-.074-1.07-.074-2.146 0-3.216.025-.36.063-.71.114-1.05.051-.34.114-.67.19-.986.076-.315.163-.619-.262.909-.099-.29.21-.553.332-.789.145-.236.28.487.402.75.122-.263.233-.54.332.83.099-.29.186.594.262.91.076.316.139.644-.19.983-.051-.34-.089-.689-.114-1.049-.074-1.07-.074-2.146 0-3.216.025-.36.063-.71.114-1.05.051-.34.114-.67.19-.986.076-.315.163-.619.262-.909.099-.29.21-.553.332-.789.145-.236.28.487.402.75.122-.263.233-.54.332.83.099-.29.186.594.262.91.076.316.139.644.19.983z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors duration-200">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16.98 0H7.02C3.13 0 0 3.13 0 7.02v9.96c0 3.89 3.13 7.02 7.02 7.02h9.96c3.89 0 7.02-3.13 7.02-7.02V7.02c0-3.89-3.13-7.02-7.02-7.02zm-5.18 17.65c-2.6 0-4.71-2.11-4.71-4.71s2.11-4.71 4.71-4.71c2.6 0 4.71 2.11 4.71 4.71s-2.11 4.71-4.71 4.71zm5.24-9.87c-.85 0-1.54-.69-1.54-1.54s.69-1.54 1.54-1.54 1.54.69 1.54 1.54-.69 1.54-1.54 1.54z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2024 Elegance & Style. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Product data in a JavaScript array
+        const products = [
+            { name: 'The Classic Tote', price: '$299', category: 'bag', imageUrl: 'https://placehold.co/600x400/D1D5DB/6B7280?text=Elegant+Bag' },
+            { name: 'The Leather Loafer', price: '$189', category: 'shoe', imageUrl: 'https://placehold.co/600x400/E5E7EB/9CA3AF?text=Leather+Loafers' },
+            { name: 'The Comfort Palm', price: '$129', category: 'palm', imageUrl: 'https://placehold.co/600x400/D1D5DB/6B7280?text=Luxury+Palms' },
+            { name: 'The Everyday Clutch', price: '$150', category: 'bag', imageUrl: 'https://placehold.co/600x400/D1D5DB/6B7280?text=Everyday+Clutch' },
+            { name: 'The Suede Sneaker', price: '$145', category: 'shoe', imageUrl: 'https://placehold.co/600x400/E5E7EB/9CA3AF?text=Suede+Sneakers' },
+            { name: 'The Summer Sandal', price: '$95', category: 'palm', imageUrl: 'https://placehold.co/600x400/D1D5DB/6B7280?text=Summer+Sandal' },
+            { name: 'The Business Briefcase', price: '$350', category: 'bag', imageUrl: 'https://placehold.co/600x400/D1D5DB/6B7280?text=Business+Briefcase' },
+            { name: 'The Formal Oxford', price: '$220', category: 'shoe', imageUrl: 'https://placehold.co/600x400/E5E7EB/9CA3AF?text=Formal+Oxford' },
+            { name: 'The Beach Slide', price: '$85', category: 'palm', imageUrl: 'https://placehold.co/600x400/D1D5DB/6B7280?text=Beach+Slide' },
+        ];
+
+        // Function to render products
+        function renderProducts(filterCategory) {
+            const container = document.getElementById('product-container');
+            container.innerHTML = ''; // Clear previous products
+
+            // Filter products based on the selected category
+            const filteredProducts = filterCategory === 'all'
+                ? products
+                : products.filter(product => product.category === filterCategory);
+
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300';
+                
+                // Construct the WhatsApp message with the product name
+                const whatsappMessage = `I would like to order the ${product.name}.`;
+                const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+
+                productCard.innerHTML = `
+                    <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2">${product.name}</h3>
+                        <p class="text-gray-600 mb-4">${product.price}</p>
+                        <a href="${whatsappLink}" class="block w-full bg-gray-900 text-white font-semibold py-3 rounded-full hover:bg-gray-700 transition-colors duration-300 text-center">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                `;
+                container.appendChild(productCard);
+            });
+        }
+
+        // Add event listeners for filter buttons
+        document.querySelectorAll('[data-filter]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const filter = e.target.dataset.filter;
+                renderProducts(filter);
+            });
+        });
+
+        // Initial render of all products on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts('all');
+        });
+    </script>
+</body>
+</html>
